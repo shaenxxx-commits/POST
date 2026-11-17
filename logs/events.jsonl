@@ -1,3 +1,7 @@
 {"ts":"2026-11-17T00:35:00Z","event":"INIT_SYSTEM","actor":"architect","details":"Initialized POST DDA repository skeleton"}
 {"ts":"2026-11-17T02:50:00Z","event":"INIT_SYSTEM","actor":"architect","record_id":null,"details":"Rebuilt POST core around minimal Gate 1-4 cycle and clean slate"}
 {"ts":"2026-11-17T18:32:00Z","event":"TRIAGE_COMPLETED","actor":"executor","record_id":"2026-001","details":"Completed Gate 1 triage of MAIA digest 2026-11-17; selected #12 (arXiv:2611.17610) as 2026-001"}
+{"ts": "2026-11-17T19:40:00Z", "event": "POST_PUBLISHED", "actor": "architect", "record_id": "2026-001", "details": "Approved and published 2026-001 (arXiv:2611.17610) with da Vinci + cyberpunk cover to https://t.me/t_cortex"}
+{"ts": "2026-11-17T20:10:00Z", "event": "POLICY_UPDATED", "actor": "architect", "record_id": null, "details": "Set Telegram caption length to 850-1024 chars, enriched Gate 2 with authors/code/videos, added per-article cover metaphor approval and arXiv fallback rule"}
+{"ts": "2026-11-17T21:15:00Z", "event": "POST_PUBLISHED", "actor": "architect", "record_id": "2026-002", "details": "Approved and published 2026-002 (arXiv:2611.17338, Haoyue Liu) with optical calibration gate cover to https://t.me/t_cortex"}
+{"ts": "2026-11-17T21:35:00Z", "event": "RECORD_CREATED", "actor": "executor", "record_id": "2026-003", "details": "Initialized 2026-003 (arXiv:2611.17797, #6); arXiv direct fetch failed, awaiting source header/text from architect per fallback rule"}

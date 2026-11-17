@@ -1,2 +1,3 @@
 {"ts":"2026-11-17T00:35:00Z","event":"INIT_SYSTEM","actor":"architect","details":"Initialized POST DDA repository skeleton"}
 {"ts":"2026-11-17T02:50:00Z","event":"INIT_SYSTEM","actor":"architect","record_id":null,"details":"Rebuilt POST core around minimal Gate 1-4 cycle and clean slate"}
+{"ts":"2026-11-17T18:32:00Z","event":"TRIAGE_COMPLETED","actor":"executor","record_id":"2026-001","details":"Completed Gate 1 triage of MAIA digest 2026-11-17; selected #12 (arXiv:2611.17610) as 2026-001"}

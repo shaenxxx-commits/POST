@@ -1,1 +1,2 @@
 {"ts":"2026-11-17T00:35:00Z","event":"INIT_SYSTEM","actor":"architect","details":"Initialized POST DDA repository skeleton"}
+{"ts":"2026-11-17T02:50:00Z","event":"INIT_SYSTEM","actor":"architect","record_id":null,"details":"Rebuilt POST core around minimal Gate 1-4 cycle and clean slate"}

@@ -1,0 +1,6 @@
+*.tmp
+*.bak
+.DS_Store
+__pycache__/
+local_drafts/
+raw_covers/

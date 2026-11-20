@@ -30,6 +30,7 @@
 * `TRIAGE_COMPLETED` — Gate 1 (триаж дайджеста)
 * `POLICY_UPDATED` — правка редакционной политики
 * `CHANNEL_DESCRIPTION_APPROVED` — утверждение описания канала
-* `ARCHITECTURE_HUB_AND_SPOKE_DOCUMENTED` — фиксация Hub & Spoke, трёхролевого регламента, портала
+* `ARCHITECTURE_HUB_AND_SPOKE_DOCUMENTED` — фиксация Hub & Spoke, трёхролевого регламента
 * `ERRATUM_RECORDED` — фиксация опечатки в неизменяемых (`I1`) блоках без их правки
 * `SYNC_GITHUB` — синхронизация с `origin/main`
+* `DDA_STANDARDIZED` — миграция на KARCAS-DDA (единый вход, meta-роли, ультратонкий шаблон)

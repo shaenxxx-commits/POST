@@ -2,13 +2,13 @@
 
 ## 1. INPUT (Gate 1)
 - **Дата получения:** YYYY-MM-DD
-- **Источник (MAIA):** digest YYYY-MM-DD (#N, score X, shortlist #M)
+- **Источник (MAIA):** digest YYYY-MM-DD (#N, maia_id: <ID>, score X, shortlist #M)
 - **Кластер:** <Тематический кластер>
 - **Artifact Tier:** A | B | C (`code_status: open | closed | not_reported`)
 - **arXiv / DOI:** <arXiv:XXXX.XXXXX>
 
 ## 2. FACTS & ARTIFACTS (Gate 2)
-- **Оригинальное название и авторы:** <Title (Org) Authors —>
+- **Оригинальное название и авторы:** <Title — Authors (Org)>
 - **Артефакты и ссылки:**
   - Статья: <URL>
   - Код / Данные / Проект: <URL или нет>
@@ -20,7 +20,7 @@
 ## 3. PUBLICATIONS & LOG (Gate 3–4)
 - **Статус:** `PUBLISHED`
 - **Площадки (`Hub & Spoke`):**
-  - `RU · Telegram (@t_cortex)`: <URL, дата>
+  - `RU · Telegram (@t_cortex)`: <URL или дата>
   - `RU · Хабр`: —
   - `EN · Substack Notes`: —
   - `EN · Bluesky`: —

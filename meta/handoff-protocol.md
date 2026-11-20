@@ -8,6 +8,7 @@
 - **digest_ref:**
   - date: YYYY-MM-DD
   - digest_pos: #N
+  - maia_id: <incoming_messages.id>
   - score: X
   - echelon: 1
   - shortlist_pos: M
@@ -34,5 +35,6 @@
 ## Правила валидации (Архиватор)
 - Все поля обязательны; пустые — явный "—".
 - claims — 3–5 буллитов суммарно, не больше.
+- `maia_id` — положительное целое число из БД `MAIA` (`incoming_messages.id`).
 - record_id уникален, 2026-NNN сквозной (I2).
 - При нарушении — вернуть Редактору на доработку, не создавать карточку.

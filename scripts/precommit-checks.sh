@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# POST precommit gate: I1 (append-only) + I4 (no secrets/paths)
+# POST precommit gate: I1 (append-only) + I4 (no secrets/paths) + I12 (minimalism)
 set -euo pipefail
 
 fail() { echo "FAIL: $*" >&2; exit 1; }
@@ -24,6 +24,22 @@ for f in $CHANGED; do
   if [ "$OLD" != "$NEW" ]; then fail "I1: $f has modified INPUT/SOURCE block"; fi
 done
 ok "I1: no immutable block changes in records/"
+
+echo "=== I12: minimalism guard for post-I12 records ==="
+for f in records/2026/*.md; do
+  [ -e "$f" ] || continue
+  case "$(basename "$f")" in
+    001_*|002_*|003_*) continue ;;
+  esac
+  if grep -qE '(Telegram Draft|Визуальная метафора|Суть простыми словами|Честные ограничения)' "$f"; then
+    fail "I12: $f contains forbidden full-text or cover sections"
+  fi
+  LINES=$(wc -l < "$f")
+  if [ "$LINES" -gt 60 ]; then
+    fail "I12: $f exceeds 60 lines ($LINES lines)"
+  fi
+done
+ok "I12: post-I12 records comply with minimalism rule"
 
 echo "=== I1: JSONL validity ==="
 if [ -f logs/events.jsonl ]; then

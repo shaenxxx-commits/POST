@@ -35,3 +35,37 @@
 - `ERRATUM_RECORDED` — фиксация опечатки в неизменяемых (`I1`) блоках без их правки
 - `SYNC_GITHUB` — синхронизация с `origin/main`
 - `DDA_STANDARDIZED` — миграция на KARCAS-DDA (единый вход, meta-роли, ультратонкий шаблон)
+- `PROTOCOL_ADOPTED` — принят протокол Редактор → Копирайтер (ADR-008)
+
+## Журнал триажа (triage.jsonl)
+
+Отдельный append-only файл `logs/triage.jsonl`: одна строка на каждую из 15 позиций дайджеста. Начало накопления — 2026-11-19 (пилот `maia_id 484476` в Git не занесён; отсев прежних дайджестов не восстанавливается).
+
+### Схема (порядок ключей строгий)
+
+- `ts` — ISO-8601 UTC (`date -u +%FT%TZ`)
+- `digest_date` — `YYYY-MM-DD`
+- `digest_pos` — int (1..15)
+- `maia_id` — int (`incoming_messages.id`)
+- `arxiv_id` — `arXiv:XXXX.XXXXX` или `null`
+- `score` — int (0..10)
+- `scorer` — версия оценщика MAIA или `"—"`
+- `decision` — `selected` | `reserve` | `rejected`
+- `reason_code` — закрытый список (см. ниже)
+- `record_id` — `2026-NNN` для `selected`, иначе `null`
+- `actor` — `editor`
+- `note` — необязательно, ≤120 знаков
+
+### reason_code (закрытый список)
+
+- `selected`: `score_gt8`, `tier_a`, `tier_b`, `tier_c`
+- `reserve`: `utility_below_2`, `niche`, `packaging`, `alarmism_risk`
+- `rejected`: `metrics_dispute`, `routine_benchmark`, `theory_only`
+
+### Канон сериализации
+
+- Компактный JSON (`jq -c`), одна строка на позицию.
+- Ключи строго в порядке схемы.
+- Только append через `>>`, валидация `jq -c .`.
+
+Валидация `logs/triage.jsonl` включена в `scripts/precommit-checks.sh`.

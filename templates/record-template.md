@@ -2,7 +2,7 @@
 
 ## 1. INPUT (Gate 1)
 - **Дата получения:** YYYY-MM-DD
-- **Источник (MAIA):** digest YYYY-MM-DD (#N, maia_id: <ID>, score X, shortlist #M)
+- **Источник (MAIA):** digest YYYY-MM-DD (#N, maia_id: <ID>, score X, scorer: <S или "—">, kind: <kind>, shortlist #M)
 - **Кластер:** <Тематический кластер>
 - **Artifact Tier:** A | B | C (`code_status: open | closed | not_reported`)
 - **arXiv / DOI:** <arXiv:XXXX.XXXXX>

@@ -45,4 +45,13 @@ if [ -f logs/events.jsonl ]; then
   ok "I1: events.jsonl every line is valid JSON"
 fi
 
+
+echo "=== I1: triage.jsonl validity ==="
+if [ -f logs/triage.jsonl ] && [ -s logs/triage.jsonl ]; then
+  jq -c . logs/triage.jsonl >/dev/null || fail "I1: triage.jsonl has invalid JSON line"
+  ok "I1: triage.jsonl every line is valid JSON"
+else
+  ok "I1: triage.jsonl empty or absent (valid for clean slate)"
+fi
+
 echo "=== ALL GATES PASSED ==="

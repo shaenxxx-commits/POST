@@ -19,6 +19,7 @@ ok "I4: email addresses allow-listed"
 echo "=== I1: append-only guard for records/ ==="
 CHANGED=$(git diff --name-only HEAD -- 'records/2026/*.md' 2>/dev/null || true)
 for f in $CHANGED; do
+  [ -e "$f" ] || continue
   OLD=$(git show "HEAD:$f" 2>/dev/null | awk '/^## 1\. INPUT/{g=1} /^## 3\./{g=0} g' || true)
   NEW=$(awk '/^## 1\. INPUT/{g=1} /^## 3\./{g=0} g' "$f" 2>/dev/null || true)
   if [ "$OLD" != "$NEW" ]; then fail "I1: $f has modified INPUT/SOURCE block"; fi
@@ -28,9 +29,6 @@ ok "I1: no immutable block changes in records/"
 echo "=== I12: minimalism guard for post-I12 records ==="
 for f in records/2026/*.md; do
   [ -e "$f" ] || continue
-  case "$(basename "$f")" in
-    001_*|002_*|003_*) continue ;;
-  esac
   if grep -qE '(Telegram Draft|Визуальная метафора|Суть простыми словами|Честные ограничения)' "$f"; then
     fail "I12: $f contains forbidden full-text or cover sections"
   fi

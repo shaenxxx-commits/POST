@@ -13,7 +13,7 @@
 `CURRENT_STATE.md` — новая строка в реестре. `logs/events.jsonl` — append (`jq -c`, поля: `ts`, `event`, `actor`, `record_id`, `details`).
 
 ## 4. Инварианты и гейт
-Перед коммитом — `./scripts/precommit-checks.sh` (I1 по `records/2026/001..003`, валидность JSONL, I4). Без прохождения гейта коммит **не создаётся**.
+Перед коммитом — `./scripts/precommit-checks.sh` (I1 по `records/2026/*.md`, валидность JSONL, I4, I12 минимализм). Без прохождения гейта коммит **не создаётся**.
 
 ## 5. Безопасная генерация команд
 - Файлы — через `cat > file <<'EOF'` (UTF-8) или `printf`, без длинных base64-payload'ов.
